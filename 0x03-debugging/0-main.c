@@ -1,5 +1,4 @@
-#include <main.h>
-
+#include "main.h"
 /**
  * main - tests is number is positive or negative
  * Return: 0 always
