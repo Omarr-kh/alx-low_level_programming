@@ -7,5 +7,6 @@ int _isupper(int n);
 int _isdigit(int n);
 int mul(int a, int b);
 void print_numbers(void);
+void print_most_numbers(void);
 
 #endif
