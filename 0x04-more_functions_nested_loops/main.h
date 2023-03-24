@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int isUpper(int n);
+int _isupper(int n);
 
 #endif
