@@ -16,7 +16,7 @@ struct dog
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-struct dog *new_dog( char *name, float age, char *owner);
+struct dog *new_dog(char *name, float age, char *owner);
 void free_dog(struct dog *d);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
