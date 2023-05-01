@@ -8,17 +8,24 @@
  * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
- {
-         size_t size = 0;
-         do {
-                 printf("[%p] %d\n", (void *)head, head->n);
-                 size++;
-                 if (head <= head->next)
-                 {
-                         printf("-> [%p] %d\n", (void *)(intptr_t)&exit, 98);
-                         exit(98);
-                 }
-                 head = head->next;
-         } while (head != NULL);
-         return (size);
- }
+{
+	int size = 0;
+	const listint_t *current = head;
+	const listint_t *next_node = NULL;
+
+	while (current)
+	{
+		printf("[%p] %d\n", (void *)current, current->n);
+		size++;
+
+		next_node = current->next;
+
+		if (next_node != NULL && current <= next_node)
+		{
+			printf("-> [%p] %d\n", (void *)(intptr_t)&exit, 98);
+			exit(98);
+		}
+		current = next_node;
+	}
+	return (size);
+}
