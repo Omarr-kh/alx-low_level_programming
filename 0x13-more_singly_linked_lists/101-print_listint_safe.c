@@ -1,7 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 size_t nodesIfCycle(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
 
@@ -15,7 +14,9 @@ size_t nodesIfCycle(const listint_t *head)
 	const listint_t *slowPtr;
 	const listint_t *fastPtr;
 	size_t nodes = 1;
-
+	
+	if (head == NULL)
+		exit(98);
 	if (head == NULL || head->next == NULL)
 		return (0);
 
