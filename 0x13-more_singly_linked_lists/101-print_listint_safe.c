@@ -31,7 +31,7 @@ size_t nodesIfCycle(const listint_t *head)
 				slowPtr = slowPtr->next;
 				fastPtr = fastPtr->next;
 			}
-			
+
 			slowPtr = slowPtr->next;
 			while (slowPtr != fastPtr)
 			{
@@ -53,7 +53,7 @@ size_t nodesIfCycle(const listint_t *head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nodes, i;
+	size_t nodes, i = 0;
 
 	nodes = nodesIfCycle(head);
 	if (nodes == 0)
