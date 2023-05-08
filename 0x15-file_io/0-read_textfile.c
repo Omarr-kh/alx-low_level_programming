@@ -33,7 +33,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
-	buffer[bytes] = '\0';
 
 	if (fwrite(buffer, sizeof(char), bytes, stdout) != bytes)
 	{
