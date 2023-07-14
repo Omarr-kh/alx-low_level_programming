@@ -12,7 +12,9 @@
 
 int main(int argc, char **argv)
 {
-	int fd1, fd2; ssize_t bytes; char buf[BUF_SIZE];
+	int fd1, fd2;
+	ssize_t bytes;
+	char buf[BUF_SIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -20,19 +22,17 @@ int main(int argc, char **argv)
 	fd1 = open(argv[1], O_RDONLY);
 
 	if (fd1 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 
 	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (fd2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	while ((bytes = read(fd1, buf, BUF_SIZE)) > 0)
-	{
 		if (write(fd2, buf, bytes) != bytes)
-		{
-			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]);
-			exit(99);
-		}
-	}
+			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	if (bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
