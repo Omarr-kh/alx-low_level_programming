@@ -5,7 +5,7 @@
  * @h: head of the dlinked list
  * Return: number of nodes
  */
-size_t print_dlistint(const dlistint *h)
+size_t print_dlistint(const dlistint_t *h)
 {
 	size_t l = 0;
 
