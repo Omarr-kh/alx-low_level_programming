@@ -10,7 +10,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int key_idx;
+	unsigned long int key_idx = 0;
 	char *key_dup, *value_dup;
 	hash_node_t *new_node, *bucket;
 
