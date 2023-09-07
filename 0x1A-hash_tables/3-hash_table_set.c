@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *key_dup, *value_dup;
 	hash_node_t *new_node, *bucket;
 
-	if (!key || !ht || !value)
+	if (!key || !ht || !value || !*key)
 		return (0);
 
 	value_dup = strdup(value);
