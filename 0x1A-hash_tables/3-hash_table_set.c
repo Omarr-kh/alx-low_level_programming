@@ -28,7 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (!strcmp(key, bucket->key))
 		{
-			free(bucket->key);
+			free(bucket->value);
 			bucket->value = value_dup;
 			return (1);
 		}
